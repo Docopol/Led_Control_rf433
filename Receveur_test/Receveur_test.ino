@@ -22,19 +22,19 @@ void loop()
    
     if (driver.recv(buf, &buflen)) // Non-blocking
     {
-      int i;
-      // Message with a good checksum received, dump it.
+      int condition = (char)buf[0] - 48;
       Serial.print("Rec: ");
-      Serial.println(buf[0]);  
+      Serial.println(condition);  
 
-        /*if(buf[0] == "1")
+        if(condition == 1)
         {
             digitalWrite(led, HIGH);
+            Serial.println("Okay");
         }
         else
         {
             digitalWrite(led, LOW);
-        }*/
+        }
     }
     
  }

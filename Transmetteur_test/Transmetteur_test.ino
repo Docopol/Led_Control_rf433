@@ -16,22 +16,19 @@ void setup()
 
 void loop()
 {
-    char *mes = "1";
+    char *mes;
     buttonState = digitalRead(buttonPin);
       
-    /*if (buttonState == HIGH) {
-      *mes="1";
+    if (buttonState == HIGH) {
+      mes="1";
     } 
     
     else {
-      *mes="0";
-    }*/
+      mes="0";
+    }
     driver.send((uint8_t *)mes, strlen(mes));
     driver.waitPacketSent();
-    delay(1000);
-
-    
-    
+    delay(100);
 }
 
 
